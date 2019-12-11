@@ -9,10 +9,8 @@ class RecipeController extends BaseController {
 
     getRecipeData(req, res) {
         // for now deal with not finding a recipe
-        console.log(req.params);
-        res.status(200).send({
-            status: 0,
-            recipe: {}
+        getRecipe(req.params.itemId).then((data) => {
+            res.status(200).send(data);
         })
     }
 }
