@@ -1,5 +1,6 @@
 coverage
 dist
+public
 node_modules
 .env.development
 .env.backend

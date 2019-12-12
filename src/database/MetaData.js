@@ -29,9 +29,10 @@ export const getTypes = () => {
 }
 
 export const getRarities = () => {
-    return new Promise((resolve, rejct) => {
+    return new Promise((resolve, reject) => {
         sql.connect(dbConfig, (err) => {
             if (err) {
+                console.log('error connecting to database', err)
                 reject(err);
             }
             else {
