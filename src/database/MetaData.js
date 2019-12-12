@@ -6,6 +6,7 @@ export const getTypes = () => {
         // const connection = sql.Connection(dbConfig);
         sql.connect(dbConfig, (err) => {
             if (err) {
+                console.log('error connecting to database...', err);
                 reject(err);
             }
             else {
