@@ -21,6 +21,7 @@ export const getTypes = () => {
                 })
                 .catch((error) => {
                     console.log('getTypes', error);
+                    console.log('user', process.env.CRAFT_UTIL_DB_USER)
                     reject(error);
                 })
             }

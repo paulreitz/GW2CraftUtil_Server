@@ -48,6 +48,10 @@ export const getSearchResults = (data) => {
     // data.minLevel && queries.push(`rating >= ${data.minLevel}`);
     queries.push(`rating >= ${minLevel}`);
     queries.push(`rating <= ${maxLevel}`);
+
+    data.search && queries.push(`name like '%${data.search}%'`);
+    console.log(data.search);
+
     const allQueries = queries.length ? `WHERE ${queries.join(' AND ')}` : '';
     const queryString = `SELECT TOP 100 * FROM Items ${allQueries}`;
     console.log(queryString);
