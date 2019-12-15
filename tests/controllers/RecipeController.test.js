@@ -7,7 +7,8 @@ jest.mock('../../src/database/recipeData');
 it('should set up the path to the endpoint', () => {
     const endpoints = [];
     const __controller = new RecipeController(mockRouterWithPathArray(endpoints));
-    expect(endpoints).toContain('/recipes/:itemId')
+    expect(endpoints).toContain('/recipes/:itemId');
+    expect(endpoints.length).toBe(1); // fail if a new endpoint is added tests aren't added
 });
 
 it('should set the status to 200 and return a recipe', (done) => {

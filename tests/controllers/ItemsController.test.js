@@ -14,6 +14,7 @@ it('should set up the paths to the end points', () => {
     const __controller = new ItemsController(router);
     expect(paths).toContain('/items/cover');
     expect(paths).toContain('/items/search');
+    expect(paths.length).toBe(2); // fail if a new endpoint is added tests aren't added
 });
 
 it('should return 200 and get the item set when getting the cover items', (done) => {

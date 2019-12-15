@@ -9,6 +9,7 @@ it('should set up the paths to the endpoints', () => {
     const __controller = new MetadataController(mockRouterWithPathArray(endpoints));
     expect(endpoints).toContain('/meta/types');
     expect(endpoints).toContain('/meta/rarities');
+    expect(endpoints.length).toBe(2);  // fail if a new endpoint is added tests aren't added
 });
 
 it('should set status to 200 and return the types', (done) => {
